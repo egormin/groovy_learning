@@ -50,19 +50,41 @@ println("Ant <=> Banana" + ("Ant" <=> "Banana"))  // -1    Sorting by alphabyte
 println("Banana <=> Ant" + ("Banana" <=> "Ant"))  //  1
 println("Ant <=> Ant" + ("Ant" <=> "Ant"))        //  0
 
+def myString2 = 'Random'
+println("A $myString2 string")              // A Random string
+printf("A %s string \n", myString2)  // A Random string   !!! printf
+printf("%-10s %d %.2f %10s \n", ['Stuff'], 10, 1.234, 'Random')
+// [Stuff]    10 1.23     Random    // 10 -number of spaces in the string, .2 - accuracy
 
-def res = new URL("http://example.org/").text
-println(res)
+
+////   INPUTS
+print("Enter your name: ")
+def your_name = System.console().readLine()
+println("Hello, " + your_name)
+
+printf("Enter first number: ")
+def numb1 = System.console().readLine().toDouble()
+printf("Enter second number: ")
+def numb2 = System.console().readLine().toDouble()
+printf("%f + %f = %.2f", numb1, numb2, numb1 + numb2)
 
 
-def baseUrl = new URL('https://api.duckduckgo.com/')
-def queryString = 'q=groovy&format=json&pretty=1'
-def connection = baseUrl.openConnection()
-connection.with {
-    doOutput = true
-    requestMethod = 'POST'
-    outputStream.withWriter { writer ->
-        writer << queryString
-    }
-    println content.text
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
